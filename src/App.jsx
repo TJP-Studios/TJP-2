@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from './components/Navbar'
+import GetInTouch from './components/GetInTouch'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className='text-4xl bg-black text-white'>This TRLPLAW</h1>
+      <Navbar />
+      <GetInTouch />
+      <Footer />
     </>
   )
 }
