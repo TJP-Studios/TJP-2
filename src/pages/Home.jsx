@@ -1,18 +1,22 @@
-import Navbar from '../components/Navbar'
-import Hero from "../components/Hero"
-import GetInTouch from '../components/GetInTouch'
-import Footer from '../components/Footer'
+import Navbar from "../components/Navbar";
+import { Hero, Defend, Value, Practice, Team, Clients } from "../components/Hero";
+import GetInTouch from "../components/GetInTouch";
+import Footer from "../components/Footer";
 
 function Home() {
-
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
+      <Defend />
+      <Value />
+      <Practice />
+      <Team />
+      <Clients />
       <GetInTouch />
       <Footer />
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
