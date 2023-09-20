@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../assets/svg/logo.svg'
+import { Link } from 'react-router-dom';
 
 const links = [
     {
@@ -36,8 +37,8 @@ const links = [
 
 const Navbar = () => {
   return (
-    <div className='w-full h-full py-4 px-14 bg-white border border-b-[#C6C9CF]'>
-        <div className='flex items-center justify-between'>
+    <div className='w-full h-full py-4 px-4 md:px-14 bg-white border border-b-[#C6C9CF]'>
+        <div className='w-full flex items-center justify-between'>
             <div>
                 <img 
                 src={Logo} 
@@ -45,15 +46,15 @@ const Navbar = () => {
             </div>
             <div className="hidden lg:flex items-center gap-5 lg:gap-[2rem]">
                 {links.map((links) => (
-                <a href={links.url} 
+                <Link to={links.url} 
                 key={links.id} 
-                className="nav-item text-[#353A43] text-lg font-medium">
+                className="nav-item text-[#353A43] text-lg font-medium hover:text-[#235CEB]">
                 {links.text}
-                </a>
+                </Link>
                 ))}
             </div>
-            <button className='flex items-center gap-2 w-[fit-content] py-[0.4475rem] px-2 text-white text-lg bg-[#235CEB] font-bold rounded-md md:py-[11px] md:px-6 hover:scale-100 hover:text-xl transform transition-all duration-500'>
-                Let's get in touch
+            <button className='flex items-center gap-2 w-[fit-content] py-[0.4475rem] px-2 text-white text-base md:text-lg bg-[#235CEB] font-bold rounded-md md:py-[0.6875rem] md:px-6 hover:bg-blue-800'>
+              Let's get in touch
             </button>
         </div>
     </div>
