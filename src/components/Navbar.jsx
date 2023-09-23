@@ -1,11 +1,11 @@
 import React from 'react'
 import Logo from '../assets/svg/logo.svg'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const links = [
     {
       id: 1,
-      url: "/home",
+      url: "/",
       text: "Home",
     },
     {
@@ -36,6 +36,8 @@ const links = [
   ];
 
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <div className='w-full h-full py-4 px-4 md:px-14 bg-white border border-b-[#C6C9CF]'>
         <div className='w-full flex items-center justify-between'>
@@ -48,7 +50,9 @@ const Navbar = () => {
                 {links.map((links) => (
                 <Link to={links.url} 
                 key={links.id} 
-                className="nav-item text-[#353A43] text-lg font-medium hover:text-[#235CEB]">
+                className={`nav-item text-[#353A43] text-lg font-medium hover:text-[#235CEB] ${
+                location.pathname === links.url ? 'bg-[#EFF4FF] text-[#235CEB] p-1' : ''
+              }`}>
                 {links.text}
                 </Link>
                 ))}
