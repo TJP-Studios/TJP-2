@@ -1,5 +1,5 @@
 import React from 'react'
-import vector from '../assets/svg/vector.svg';
+import vector from '../assets/svg/Vector.svg';
 import people from '../assets/svg/People.svg';
 import Home from '../assets/svg/Home.svg';
 import law from '../assets/svg/Law.svg';
