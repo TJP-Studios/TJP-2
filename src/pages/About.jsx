@@ -8,19 +8,19 @@ import {
 } from "../components/Hero";
 import GetInTouch from "../components/GetInTouch";
 import Footer from "../components/Footer";
-import {Button} from "../components/Button";
-import {Statistics} from "../components/Statistics";
+import { Button } from "../components/Button";
+import { Statistics } from "../components/Statistics";
 
-export const AboutUs =() =>{
+export const AboutUs = () => {
   return (
     <>
-      <About/>
+      <About />
       <Team />
       <GetInTouch />
       <Footer />
     </>
   );
-}
+};
 
 export const About = () => {
   return (
@@ -30,10 +30,17 @@ export const About = () => {
           <img />
         </div>
         <div className=" flex flex-col gap-8 sm:w-[50%]">
-          <h1 className="font-bold text-[3.5rem] leading-[4.105625rem] tracking-wide"></h1>
+          <h1 className="font-bold text-[3.5rem] leading-[4.105625rem] tracking-wide">
+            {" "}
+            Protecting your Rights{" "}
+          </h1>
+          <h3 className="font-bold text-[3rem] leading-[4.105625rem] tracking-wide">
+            {" "}
+            Bringing Justice
+          </h3>
           <p className="sm:w-[85%]">
-            With a proven track record of success, we're ready to stand by your
-            side, fighting tirelessly to protect your rights.
+            Here at TRPLAW, we protect your rights and defend your future. with
+            a team of experienced lawyers. Contact us today for consultation.
           </p>
         </div>
         <div></div>
