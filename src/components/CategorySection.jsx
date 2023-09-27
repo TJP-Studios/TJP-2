@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { categories, lawsData } from '../utils/data';
 
-
 const LawCard = ({ title, content, image, detail }) => (
   <div className="p-4 bg-white shadow rounded-lg mb-4">
     <img className='object-cover w-full block' src={image} alt="" />
