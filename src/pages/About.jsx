@@ -26,25 +26,17 @@ export const About = () => {
   return (
     <div className="relative h-[40rem]">
       <div className="p-4 bg-blue-800 sm:p-14 sm:pt-10 flex flex-col sm:flex-row justify-between gap-6 items-center relative h-full">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <img />
+        </div>
         <div className=" flex flex-col gap-8 sm:w-[50%]">
-          <h1 className="font-bold text-[3.5rem] leading-[4.105625rem] tracking-wide">
-            
-          </h1>
+          <h1 className="font-bold text-[3.5rem] leading-[4.105625rem] tracking-wide"></h1>
           <p className="sm:w-[85%]">
             With a proven track record of success, we're ready to stand by your
             side, fighting tirelessly to protect your rights.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button text={"Let's get in touch"} customClassName="text-white" />
-            <Button
-              text={"Get free consultation"}
-              customClassName="bg-white border text-[#235CEB]"
-            />
-          </div>
         </div>
-        <div>
-          
-        </div>
+        <div></div>
       </div>
       <Statistics />
     </div>
