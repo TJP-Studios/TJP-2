@@ -118,11 +118,11 @@ export const Value = () => {
 export const Practice = () => {
   return (
     <div className="p-4 sm:p-14 sm:py-16 flex flex-col gap-6 justify-between">
-      <div className=" flex flex-col gap-3 sm:w-[40%]">
+      <div className=" flex flex-col gap-3 sm:w-[50%]">
         <h2 className="font-bold text-[3.5rem] leading-[4.105625rem] sm:pt-10">
           Our practice areas
         </h2>
-        <p>
+        <p className="w-[90%]">
           Our diverse range of practice areas reflects our commitment to
           addressing a wide spectrum of legal needs
         </p>
@@ -195,14 +195,14 @@ export const Team = () => {
 export const Clients = () => {
   return (
     <div className=" flex flex-col justify-between ">
-      <div className="flex flex-col justify-center items-center text-white gap-3 bg-[url('/client_img.svg')] bg-no-repeat bg-cover bg-center w-[100vw] h-[100vh]">
+      <div className="flex flex-col justify-center items-center text-white gap-3 bg-[url('/client_img.svg')] bg-no-repeat bg-cover bg-center h-[100vh]">
         <h2 className="font-bold text-[3.5rem] leading-[4.105625rem]">
           We take care of our Clients
         </h2>
         <Button text={"Let's get in touch"} customClassName="text-white" />
       </div>
-      <div className="min-h-[13rem]">
-        <div className="bg-gray-700 p-6 rounded sm:px-10 sm:py-7 left-[3rem] relative bottom-[6rem] w-full">
+      <div className="min-h-[15rem] overflow-x-hidden relative">
+        <div className="bg-gray-700 p-6 rounded sm:px-10 sm:py-7 z-20 left-[3rem] relative bottom-[3rem] w-full -x-hidden">
           <h2 className="font-bold text-[3rem] w-[45%] leading-[4.105625rem] text-white">
             Here's what our clients say about us.
           </h2>
