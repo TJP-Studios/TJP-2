@@ -9,7 +9,7 @@ const Footer = () => {
             <img src={Logo} alt="" />
             <div className='flex flex-col md:flex-row items-center justify-center gap-10'>
                 <div>
-                <a className='text-white font-medium text-lg' href="#">Home</a>
+                <a className='text-white font-medium text-lg' href="/">Home</a>
                 </div>
                 <div>
                 <a className='text-white font-medium text-lg' href="#">About Us</a>
@@ -18,13 +18,13 @@ const Footer = () => {
                 <a className='text-white font-medium text-lg' href="#">Attorney's Profile</a>
                 </div>
                 <div>
-                <a className='text-white font-medium text-lg' href="#">Services</a>
+                <a className='text-white font-medium text-lg' href="/services">Services</a>
                 </div>
                 <div>
-                <a className='text-white font-medium text-lg' href="#">Blog</a>
+                <a className='text-white font-medium text-lg' href="/blog">Blog</a>
                 </div>
                 <div>
-                <a className='text-white font-medium text-lg' href="#">Contact Us</a>
+                <a className='text-white font-medium text-lg' href="/contact-us">Contact Us</a>
                 </div>
             </div>
         </div>

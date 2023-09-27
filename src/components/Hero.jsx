@@ -1,6 +1,4 @@
 import { Button } from "./Button";
-import { Statistics } from "./Statistics";
-import { team, clients } from "../utils/data";
 // import heroImg from "/public/client_img.svg";
 import value from "../assets/svg/value.svg";
 import heroImg from "../assets/svg/illustration.svg";
@@ -36,33 +34,30 @@ const practices = [
 // HERO COMPONENT
 export const Hero = () => {
   return (
-    <div className="relative h-[40rem]">
-      <div className="p-4 sm:p-14 sm:pt-10 flex flex-col sm:flex-row justify-between gap-6 items-center relative h-full">
-        <div className=" flex flex-col gap-8 sm:w-[50%]">
-          <h1 className="font-bold text-[3.5rem] leading-[4.105625rem] tracking-wide">
-            <span className="text-gray-200">We</span> Listen,
-            <span className="text-gray-200">{"   "}We</span> Advice,
-            <span className="text-gray-200">{"   "}We</span>
-            {"  "}
-            Defend.
-          </h1>
-          <p className="sm:w-[85%]">
-            With a proven track record of success, we're ready to stand by your
-            side, fighting tirelessly to protect your rights.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button text={"Let's get in touch"} customClassName="text-white" />
-            <Button
-              text={"Get free consultation"}
-              customClassName="bg-white border text-[#235CEB]"
-            />
-          </div>
-        </div>
-        <div className="sm:w-[40%] absolute right-12 top-[10%]">
-          <img src={heroImg} className="" />
+    <div className="p-4 sm:p-14 sm:pt-10 flex flex-col sm:flex-row justify-between gap-6 items-center">
+      <div className=" flex flex-col gap-8 sm:w-[50%]">
+        <h1 className="font-bold text-[3.5rem] leading-[4.105625rem] tracking-wide">
+          <span className="text-gray-200">We</span> Listen,
+          <span className="text-gray-200">{"   "}We</span> Advice,
+          <span className="text-gray-200">{"   "}We</span>
+          {"  "}
+          Defend.
+        </h1>
+        <p className="sm:w-[85%]">
+          With a proven track record of success, we're ready to stand by your
+          side, fighting tirelessly to protect your rights.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Button text={"Let's get in touch"} customClassName="text-white" />
+          <Button
+            text={"Get free consultation"}
+            customClassName="bg-white border text-[#235CEB]"
+          />
         </div>
       </div>
-      <Statistics />
+      <div className="sm:w-[40%]">
+        <img src={heroImg} />
+      </div>
     </div>
   );
 };
@@ -102,9 +97,7 @@ export const Value = () => {
           Our Key Values
         </h2>
         <p>
-          At TRPLAW, our commitment to you goes beyond just practicing law; it's
-          about bulding lasting relationships based on trust and understanding.
-          Thus, our key values are as follows
+At TRPLAW, our commitment to you goes beyond just practicing law; it's about bulding lasting relationships based on trust and understanding. Thus, our key values are as follows
         </p>
       </div>
       <div className="w-[45%]">
@@ -118,11 +111,13 @@ export const Value = () => {
 export const Practice = () => {
   return (
     <div className="p-4 sm:p-14 sm:py-16 flex flex-col gap-6 justify-between">
-      <div className=" flex flex-col gap-3 sm:w-[40%]">
-        <h2 className="font-bold text-[3.5rem] leading-[4.105625rem] sm:pt-10">
+      <div className=" flex flex-col gap-3">
+        <h2 className="font-bold text-[3rem] leading-[4.105625rem] sm:pt-10">
           Our practice areas
         </h2>
-        <p>Our diverse range of practice areas reflects our commitment to addressing a wide spectrum of legal needs</p>
+        <p>
+          Our diverse range 
+        </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 py-4 pt-8">
         {practices.map((practice) => {
@@ -130,7 +125,7 @@ export const Practice = () => {
             <div className="border rounded" key={practice.id}>
               <img src={practice.src} className="px-5 py-3" />
               <hr></hr>
-              <h3 className="font-bold p-5 text-[2rem]">{practice.title}</h3>
+              <h3 className="font-bold p-5 t">{practice.title}</h3>
               <p className="px-5 pb-12">{practice.details}</p>
             </div>
           );
@@ -150,37 +145,22 @@ export const Team = () => {
   return (
     <div className="p-4 sm:p-14 flex flex-col gap-6 justify-between">
       <div className=" flex flex-col gap-3">
-        <h2 className="font-bold text-[3.5rem] leading-[4.105625rem]">
+        <h2 className="font-bold text-[3rem] leading-[4.105625rem]">
           Meet the team of experts
         </h2>
       </div>
-      <div className="flex py-8 pb-12 pt-6 md:h-[30rem] lg:h-[35rem] flex-row justify-between items-center gap-8">
-        {team.map((team, index) => {
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 py-3 pt-6">
+        {practices.map((practice, index) => {
           return (
-            <div className="relative justify-between  py-6 ">
-              <div className="h-[80%]">
-                <img src={team.src} className="h-full" />
-              </div>
-              <div className=" mx-auto w-[90%] h-[6rem]">
-                <div className="h-[30%] px-6 py-4 w-[90%] absolute bg-white  border bottom-4  ">
-                  <h3 className="font-bold sm:text-[1rem] lg:text-[1.7rem]">{team.name}</h3>
-                  <p className="">{team.role}</p>
-                  <div className="py-3">
-                    <hr></hr>
-                  </div>
-                  <p>Practice area</p>
-                  <p className="text-sm">{team.practice}</p>
-                </div>
-              </div>
-              {/* <div className="h-[15rem]"></div> */}
+            <div className="border rounded">
+              <img src={practice.src} className="px-5 py-3" />
+              <hr></hr>
+              <h3 className="font-bold p-5 t">{practice.title}</h3>
+              <p className="px-5 pb-12">{practice.details}</p>
             </div>
           );
         })}
       </div>
-      <Button
-        text={"Go to Attorneys profile"}
-        customClassName="bg-white border text-[#235CEB]"
-      />
     </div>
   );
 };
@@ -189,79 +169,30 @@ export const Team = () => {
 
 export const Clients = () => {
   return (
-    <div className=" flex flex-col justify-between ">
-      <div className="flex flex-col justify-center items-center text-white w-full gap-3 bg-[url('/client_img.svg')] bg-no-repeat bg-cover bg-center w-[100vw] h-[100vh]">
-        <h2 className="font-bold text-[3.5rem] leading-[4.105625rem]">
+    <div className=" flex flex-col justify-between relative">
+      <div className="flex flex-col justify-center items-center text-white w-full gap-3 bg-[url('/client_img.svg')] bg-no-repeat bg-cover bg-top h-[120vh]">
+        <h2 className="font-bold text-[3rem] leading-[4.105625rem]">
           We take care of our Clients
         </h2>
-        <Button text={"Let's get in touch"} customClassName="text-white" />
       </div>
-      <div className="min-h-[13rem]">
-        <div className="bg-gray-700 p-6 rounded sm:px-10 sm:py-7 left-[3rem] relative bottom-[6rem] w-full">
-          <h2 className="font-bold text-[3rem] w-[45%] leading-[4.105625rem] text-white">
+      <div className="min-h-[30rem]">
+        <div className="bg-gray-700 p-6 rounded sm:px-10 sm:py-7 ml-8 absolute top-[55%] w-full">
+          <h2 className="font-bold text-[2.8rem] w-[45%] leading-[4.105625rem] text-white">
             Here's what our clients say about us.
           </h2>
-          <div className="flex flex-row py-3 pt-6 justify gap-3">
-            {clients.map((client, index) => {
+          <div className="flex flex-row gap-7 py-3 pt-6">
+            {practices.map((practice, index) => {
               return (
-                <div className="border rounded bg-white w-[45%] px-7 py-5">
-                  <p className="text-[4rem] text-gray-400">"</p>
-                  <p className="py-3">{client.comment}</p>
-                  <div className="py-2">
-                  <hr>
-                  </hr>
-                  </div>
-                  <div className="flex flex-row gap-6 py-2">
-                    <img src={client.src} />
-                    <div>
-                      <h3 className="font-bold ">{client.name}</h3>
-                      <p className="">{client.role}</p>
-                    </div>
-                  </div>
+                <div className="border rounded">
+                  <img src={practice.src} className="px-5 py-3" />
+                  <h3 className="font-bold p-5 t">{practice.title}</h3>
+                  <p className="px-5 pb-12">{practice.details}</p>
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-    </div>
-  );
-}; 
-
-
-// BLOG POSTS
-export const BlogPost = () => {
-  return (
-    <div className="p-4 sm:p-14 flex flex-col gap-6 justify-between">
-      {/* <div className=" flex flex-col gap-3"> */}
-        <h2 className="font-bold text-[3rem] leading-[4.105625rem]">
-          Our Latest blog posts
-        </h2>
-      {/* </div> */}
-      <div className="flex py-8 flex-row justify-between items-center gap-8">
-        {team.map((team, index) => {
-          return (
-            <div className="relative justify-between  py-6 ">
-              <div className="">
-                <img src={team.src} className="" />
-              </div>
-              <div className="">
-                <div className="px-6 py-4 bg-white border">
-                  <h3 className="font-bold sm:text-[1rem] lg:text-[1.7rem]">{team.name}</h3>
-                  <p className="">{team.role}</p>
-                  <div className="py-3">
-                    <hr></hr>
-                  </div>
-                   <p>Read article</p>
-                </div>
-                </div>
-            </div>
-          )
-        })}
-      </div>
-      <Button text={"See all blog posts"}
-        customClassName="bg-white border text-[#235CEB]"
-      />
     </div>
   );
 };
