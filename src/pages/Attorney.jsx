@@ -9,7 +9,6 @@ import {
 import GetInTouch from "../components/GetInTouch";
 import Footer from "../components/Footer";
 import {Button} from "../components/Button";
-import {Statistics} from "../components/Statistics";
 
 export const Attorney =() =>{
   return (
