@@ -1,37 +1,9 @@
 import { Button } from "./Button";
 import { Statistics } from "./Statistics";
-import { team, clients } from "../utils/data";
-// import heroImg from "/public/client_img.svg";
+import { team, clients, blogs, practices } from "../utils/data";
 import value from "../assets/svg/value.svg";
 import heroImg from "../assets/svg/illustration.svg";
-// import "../App.css";
-
-const practices = [
-  {
-    id: 0,
-    src: "/family.svg",
-    title: "Family law",
-    details: "Family law",
-  },
-  {
-    id: 1,
-    src: "/business.svg",
-    title: "Business law",
-    details: "Family law",
-  },
-  {
-    id: 2,
-    src: "/international.svg",
-    title: "International law",
-    details: "Family law",
-  },
-  {
-    id: 3,
-    src: "/property.svg",
-    title: "Property law",
-    details: "Family law",
-  },
-];
+import { Link } from "react-router-dom";
 
 // HERO COMPONENT
 export const Hero = () => {
@@ -151,12 +123,10 @@ export const Practice = () => {
 
 export const Team = () => {
   return (
-    <div className="p-4 sm:p-14 flex flex-col gap-6 justify-between">
-      <div className=" flex flex-col gap-3">
-        <h2 className="font-bold text-[3.5rem] leading-[4.105625rem]">
+    <div className="p-4 sm:p-14 flex flex-col gap-6 justify-between sm:pb-20">
+        <h2 className="font-bold text-[3.5rem] leading-[4.105625rem] py-3 pb-5">
           Meet the team of experts
-        </h2>
-      </div>
+      </h2>
       <div className="flex py-8 pb-12 pt-6 md:h-[30rem] lg:h-[35rem] flex-row justify-between items-center gap-8">
         {team.map((team, index) => {
           return (
@@ -173,7 +143,7 @@ export const Team = () => {
                   <div className="py-3">
                     <hr></hr>
                   </div>
-                  <p>Practice area</p>
+                  <p className="font-[600]">Practice area</p>
                   <p className="text-sm">{team.practice}</p>
                 </div>
               </div>
@@ -190,18 +160,18 @@ export const Team = () => {
   );
 };
 
-// TEAM COMPONENT
+// CLIENTS COMPONENT
 
 export const Clients = () => {
   return (
-    <div className=" flex flex-col justify-between ">
+    <div className=" flex flex-col justify-between overflow-x-hidden">
       <div className="flex flex-col justify-center items-center text-white gap-3 bg-[url('/client_img.svg')] bg-no-repeat bg-cover bg-center h-[100vh]">
         <h2 className="font-bold text-[3.5rem] leading-[4.105625rem]">
           We take care of our Clients
         </h2>
         <Button text={"Let's get in touch"} customClassName="text-white" />
       </div>
-      <div className="min-h-[15rem] overflow-x-hidden relative">
+      <div className="min-h-[15rem] ">
         <div className="bg-gray-700 p-6 rounded sm:px-10 sm:py-7 z-20 left-[3rem] relative bottom-[3rem] w-full -x-hidden">
           <h2 className="font-bold text-[3rem] w-[45%] leading-[4.105625rem] text-white">
             Here's what our clients say about us.
@@ -209,8 +179,8 @@ export const Clients = () => {
           <div className="flex flex-row py-3 pt-6 justify gap-3">
             {clients.map((client, index) => {
               return (
-                <div className="border rounded bg-white w-[45%] px-7 py-5">
-                  <p className="text-[4rem] text-gray-400">"</p>
+                <div className="border rounded bg-white w-[45%] px-7 py-5 flex flex-col justify-between">
+                  <p className="text-[2.5rem] font-bold text-gray-600 m-0">"</p>
                   <p className="py-3">{client.comment}</p>
                   <div className="py-2">
                     <hr></hr>
@@ -235,39 +205,42 @@ export const Clients = () => {
 // BLOG POSTS
 export const BlogPost = () => {
   return (
-    <div className="p-4 sm:p-14 flex flex-col gap-6 justify-between">
+    <div className="p-4 sm:p-14 flex flex-col gap-6 justify-between ">
       {/* <div className=" flex flex-col gap-3"> */}
       <h2 className="font-bold text-[3rem] leading-[4.105625rem]">
         Our Latest blog posts
       </h2>
       {/* </div> */}
-      <div className="flex py-8 flex-row justify-between items-center gap-8">
-        {team.map((team, index) => {
+      <div className="flex py-8 flex-row justify-between items-center gap-8 ">
+        {blogs.map((blog, index) => {
           return (
-            <div className="relative justify-between  py-6 ">
+            <div className="justify-between h-[100%] flex flex-col items-stretch w-[40%]">
               <div className="">
-                <img src={team.src} className="" />
+                <img src={blog.image} className="" />
               </div>
-              <div className="">
-                <div className="px-6 py-4 bg-white border">
-                  <h3 className="font-bold sm:text-[1rem] lg:text-[1.7rem]">
-                    {team.name}
-                  </h3>
-                  <p className="">{team.role}</p>
-                  <div className="py-3">
-                    <hr></hr>
-                  </div>
-                  <p>Read article</p>
+
+              <div className="px-4 py-4 bg-white border flex flex-col pb-3">
+                <h3 className="font-bold sm:text-[1.5rem] ">{blog.content}</h3>
+                <p className="border my-2 p-2 text-sm self-start rounded-[6px]">
+                  {blog.title}
+                </p>
+                <div className="py-3">
+                  <hr></hr>
                 </div>
+                <Link to="/blog" className="underline">
+                  Read article
+                </Link>
               </div>
             </div>
           );
         })}
       </div>
-      <Button
-        text={"See all blog posts"}
-        customClassName="bg-white border text-[#235CEB]"
-      />
+      <Link to="/blog">
+        <Button
+          text={"See all blog posts"}
+          customClassName="bg-white border text-[#235CEB]"
+        />
+      </Link>
     </div>
   );
 };
