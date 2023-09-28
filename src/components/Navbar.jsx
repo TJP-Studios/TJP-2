@@ -39,7 +39,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <div className='w-full h-full py-4 px-4 md:px-14 bg-white border border-b-[#C6C9CF]'>
+    <div className='w-full h-full py-4 px-4 md:px-14 bg-white border border-b-[#C6C9CF] sticky top-0'>
         <div className='w-full flex items-center justify-between'>
             <div>
                 <img 
